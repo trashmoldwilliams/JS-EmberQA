@@ -12,6 +12,7 @@ export default Ember.Component.extend({
         body: this.get('body'),
         author: this.get('author'),
         notes: this.get('notes'),
+        answers: this.get('answers')
       };
 
       this.set('addNewQuestion', false);
