@@ -1,5 +1,5 @@
 <ul>
   {{#each model as |question|}}
-     <li>{{question.author}}'s question is: {{question.body}}... ({{question.notes}})</li>
+     {{question-tile question=question destroyQuestion="destroyQuestion"}}
   {{/each}}
 </ul>
