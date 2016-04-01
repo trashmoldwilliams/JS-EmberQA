@@ -3,12 +3,15 @@
 <p>{{question.body}}</p>
 <p>Notes: {{question.notes}}</p>
 
-<button {{action 'delete' question}}>Delete</button>
+<button {{action 'deleteQuestion' question}}>Delete</button>
 
 <h3>Answers:</h3>
 
 <ul>
   {{#each question.answers as |answer|}}
-    <li>{{answer.author}}: {{answer.body}}</li>
+    <li>
+      {{answer.author}}: {{answer.body}}
+      <button {{action 'deleteAnswer' answer}}>Delete</button>
+    </li>
   {{/each}}
 </ul>
