@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  bookmarkedQuestions: Ember.inject.service(),
+
   model() {
     return Ember.RSVP.hash({
       questions: this.store.findAll('question'),
@@ -16,6 +18,10 @@ export default Ember.Route.extend({
       var newQuestion = this.store.createRecord('question', params);
       newQuestion.save();
       this.transitionTo('index');
-    }
+    },
+
+    addToBookmarks(questions) {
+      this.get('shoppingCart').add(questions);
+    },
   }
 });

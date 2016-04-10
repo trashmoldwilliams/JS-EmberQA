@@ -2,7 +2,12 @@
   {{#each sortedQuestions as |question|}}
      {{question-tile question=question update="updateQuestion" destroyQuestion="destroyQuestion" destroyAnswer="destroyAnswer"}}
      {{question-activity question}}
+     <button {{action ‘addToBookmarks’ question}}>Add to Bookmarks</button>
   {{/each}}
 </ul>
 
 {{new-question save2="saveQuestion"}}
+
+<h3>Bookmarks</h3>
+
+{{display-bookmarks}}
