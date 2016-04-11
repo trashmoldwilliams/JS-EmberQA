@@ -1,9 +1,5 @@
 <ul>
-  {{#each sortedQuestions as |question|}}
-     {{question-tile question=question update="updateQuestion" destroyQuestion="destroyQuestion" destroyAnswer="destroyAnswer"}}
-     {{question-activity question}}
-     <button {{action ‘addToBookmarks’ question}}>Add to Bookmarks</button>
-  {{/each}}
+   {{question-tile questions=model.questions update="updateQuestion" destroyQuestion="destroyQuestion" destroyAnswer="destroyAnswer"}}
 </ul>
 
 {{new-question save2="saveQuestion"}}

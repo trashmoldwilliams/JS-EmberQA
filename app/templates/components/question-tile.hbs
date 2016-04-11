@@ -1,3 +1,7 @@
-<li>
-  {{#link-to 'question' question.id}}{{question.author}}: {{question.body}}{{/link-to}}
-</li>
+{{#each sortedQuestions as |question|}}
+  <li>
+    {{#link-to 'question' question.id}}{{question.author}}: {{question.body}}{{/link-to}}
+    {{question-activity question}}
+    <button {{action 'addToBookmarks' question}}>Add to Bookmarks</button>
+  </li>
+{{/each}}
